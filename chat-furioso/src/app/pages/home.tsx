@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { useEffect, useRef, useState } from 'react'
 import TextBox from '../components/textBox'
+import ChatSpace from '../components/chatSpace'
 
 export function Home() {
   const [input, setInput] = useState('')
@@ -25,7 +26,8 @@ export function Home() {
           height="32"
         />
       </nav>
-      <div className="p-4 flex h-[95%] flex-col items-center justify-end rounded-md bg-white shadow-[0_0_15px_0_rgba(0,0,0,0.1)] shadow-slate-300">
+      <div className="flex h-[95%] flex-col items-center justify-end overflow-hidden rounded-md bg-white p-4 shadow-[0_0_15px_0_rgba(0,0,0,0.1)] shadow-slate-300">
+        <ChatSpace />
         <TextBox text={text} setText={setText} />
       </div>
     </div>
