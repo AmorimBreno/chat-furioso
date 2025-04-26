@@ -1,22 +1,21 @@
+import { Message } from '@/app/types/message'
 import FuriaChatNextMatchMessage from './ChatInteractions/NextMatch'
 import FuriaChatPreviousMatchMessage from './ChatInteractions/PreviousMatch'
 import FuriaChatShowMembersMessage from './ChatInteractions/ShowMembers'
+import { MessageTypeEnum } from '@/app/types/MessageTypeEnum'
+import { SenderEnum } from '@/app/types/SenderEnum'
 
-export default function ChatMessage(message: {
-  text: string
-  sender: string
-  type: string
-}) {
+export default function ChatMessage(message: Message) {
   return (
     <>
-      {message.sender === 'furia' ? (
+      {message.sender === SenderEnum.FURIA ? (
         (() => {
           switch (message.type) {
-            case 'nextMatch':
+            case MessageTypeEnum.NEXTMATCH:
               return <FuriaChatNextMatchMessage text={message.text} />
-            case 'previousMatch':
+            case MessageTypeEnum.PREVIOUSMATCH:
               return <FuriaChatPreviousMatchMessage text={message.text} />
-            case 'members':
+            case MessageTypeEnum.PLAYERS:
               return <FuriaChatShowMembersMessage text={message.text} />
             default:
               return <FuriaChatTextMessage text={message.text} />

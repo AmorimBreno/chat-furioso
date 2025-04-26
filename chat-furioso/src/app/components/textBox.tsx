@@ -1,7 +1,13 @@
 import { useEffect, useRef } from 'react'
 import { FaPaperPlane } from 'react-icons/fa6'
+import { MessageTypeEnum } from '../types/MessageTypeEnum'
+import { SenderEnum } from '../types/SenderEnum'
 
-export default function TextBox(props: { text: string; setText: Function }) {
+export default function TextBox(props: {
+  text: string
+  setText: Function
+  sendMessage: Function
+}) {
   const textareaRef = useRef<HTMLTextAreaElement>(null)
 
   // Ajusta a altura da textarea conforme o conteúdo
@@ -23,7 +29,16 @@ export default function TextBox(props: { text: string; setText: Function }) {
           value={props.text}
           onChange={(e) => props.setText(e.target.value)}
         ></textarea>
-        <div className="group h-10 max-h-full w-10 rounded-sm bg-black p-2 transition-all duration-200 ease-in-out hover:border-2 hover:border-black hover:bg-white">
+        <div
+          onClick={() =>
+            props.sendMessage({
+              text: props.text,
+              sender: SenderEnum.USER,
+              type: MessageTypeEnum.TEXT
+            })
+          }
+          className="group h-10 max-h-full w-10 rounded-sm bg-black p-2 transition-all duration-200 ease-in-out hover:border-2 hover:border-black hover:bg-white"
+        >
           <FaPaperPlane className="h-full w-full cursor-pointer text-white group-hover:text-black" />
         </div>
       </div>

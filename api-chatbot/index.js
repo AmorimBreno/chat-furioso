@@ -35,6 +35,7 @@ async function getResponse(input) {
 app.post('/ask-furia', async(req,res)=> {
     try {
         const { question } = req.body;
+        
         if (!question) {
             return res.status(400).json({ error: "Por favor, forneça uma pergunta" });
         }
