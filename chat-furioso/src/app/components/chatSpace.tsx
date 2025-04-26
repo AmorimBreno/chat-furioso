@@ -1,20 +1,59 @@
+import ChatMessage from './chatMessage'
+
 export default function ChatSpace() {
   const messageMockList = [
     {
-      message: 'Oi, tudo bem?',
+      text: 'O que e a Furia?',
       sender: 'user',
       type: 'text'
     },
     {
-      text: 'Tudo certo, e você?',
+      text: 'Tudo certo, e você? Aqui estao algumas informacoes sobre o time Furia',
       sender: 'furia',
       type: 'text'
     },
     {
-      text: 'O que você acha do time?',
+      text: 'Desde sua ascensão no cenário competitivo de Counter-Strike, a FURIA Esports se tornou sinônimo de paixão, ousadia e um estilo de jogo único que cativou fãs ao redor do mundo. Fundada em 2017, a organização brasileira rapidamente se destacou não apenas pela habilidade individual de seus jogadores, mas por uma abordagem agressiva e imprevisível que desestabiliza até os times mais consolidados.',
       sender: 'furia',
       type: 'text'
     },
+    {
+      text: 'Acho que estão perdendo muito',
+      sender: 'user',
+      type: 'text'
+    },
+    {
+      text: 'Acho que estão perdendo muito',
+      sender: 'user',
+      type: 'text'
+    },
+    {
+      text: 'Desde sua ascensão no cenário competitivo de Counter-Strike, a FURIA Esports se tornou sinônimo de paixão, ousadia e um estilo de jogo único que cativou fãs ao redor do mundo. Fundada em 2017, a organização brasileira rapidamente se destacou não apenas pela habilidade individual de seus jogadores, mas por uma abordagem agressiva e imprevisível que desestabiliza até os times mais consolidados.',
+      sender: 'furia',
+      type: 'text'
+    },
+    {
+      text: 'Desde sua ascensão no cenário competitivo de Counter-Strike, a FURIA Esports se tornou sinônimo de paixão, ousadia e um estilo de jogo único que cativou fãs ao redor do mundo. Fundada em 2017, a organização brasileira rapidamente se destacou não apenas pela habilidade individual de seus jogadores, mas por uma abordagem agressiva e imprevisível que desestabiliza até os times mais consolidados.',
+      sender: 'furia',
+      type: 'text'
+    },
+    {
+      text: 'Acho que estão perdendo muito',
+      sender: 'user',
+      type: 'text'
+    },
+    {
+      text: 'Acho que estão perdendo muito',
+      sender: 'user',
+      type: 'text'
+    },
+
+    {
+      text: 'Acho que estão perdendo muito',
+      sender: 'user',
+      type: 'text'
+    },
+
     {
       text: 'Acho que estão perdendo muito',
       sender: 'user',
@@ -23,20 +62,14 @@ export default function ChatSpace() {
   ]
 
   return (
-    <div className="h-full w-full flex-1 flex-col space-y-4 overflow-y-auto pb-4">
+    <div className="scrollbar-none h-min w-full flex-col-reverse items-end space-y-4 overflow-y-auto pb-4">
       {messageMockList.map((message, index) => {
         return (
-          <div
-            className={`flex w-full items-center ${message.sender == 'furia' ? 'justify-start' : 'justify-end'}`}
-            key={index}
-          >
-            <div
-              key={index}
-              className={`flex h-40 w-80 items-center rounded-md ${message.sender == 'furia' ? 'bg-gray-800' : 'bg-gray-500'} p-2 text-center text-sm font-semibold ${message.sender == 'furia' ? 'text-white' : 'text-black'}`}
-            >
-              {message.text}
-            </div>
-          </div>
+          <ChatMessage
+            text={message.text}
+            sender={message.sender}
+            type={message.type}
+          />
         )
       })}
     </div>
