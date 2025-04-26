@@ -7,17 +7,6 @@ import { MessageTypeEnum } from '../types/MessageTypeEnum'
 import { SenderEnum } from '../types/SenderEnum'
 
 export function Home() {
-  const [reply, setReply] = useState('')
-
-  const askAI = async () => {
-    const response = await axios.post('http://localhost:5000/ask-furia', {
-      question: input
-    })
-    setReply(response.data.response)
-  }
-
-  const [input, setInput] = useState('')
-
   const [messageList, setMessageList] = useState<Message[]>([
     {
       text: 'Ola, me pergunte o que quiser sobre a furia no CS!',
@@ -26,12 +15,22 @@ export function Home() {
     }
   ])
 
-  const addNewMessage = (message: Message) => {
+  useEffect(() => {}, [messageList])
+
+  const [input, setInput] = useState('')
+
+  const addNewMessage = async (message: Message) => {
     setMessageList((prevMessages) => [...prevMessages, message])
-    askAI()
+
+    const response = await axios.post('http://localhost:5000/ask-furia', {
+      question: input
+    })
+
+    const aiReply = response.data.response
+
     setMessageList((prevMessages) => [
       ...prevMessages,
-      { text: reply, sender: SenderEnum.FURIA, type: MessageTypeEnum.TEXT }
+      { text: aiReply, sender: SenderEnum.FURIA, type: MessageTypeEnum.TEXT }
     ])
     setInput('')
   }
