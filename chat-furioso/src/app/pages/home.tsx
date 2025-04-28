@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import TextBox from '../components/textBox'
 import ChatSpace from '../components/chatSpace'
 import { Message } from '../types/message'
@@ -11,7 +11,7 @@ export function Home() {
     {
       text: 'Ola, me pergunte o que quiser sobre a furia no CS!',
       sender: SenderEnum.FURIA,
-      type: MessageTypeEnum.TEXT
+      type: MessageTypeEnum.NEXTMATCH
     }
   ])
 
