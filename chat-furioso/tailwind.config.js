@@ -6,6 +6,7 @@ export default {
       fontFamily: {
         mont: ['Montserrat', 'sans-serif'],
         michroma: ['Michroma', 'sans-serif'],
+        russo: ['Russo One', 'sans-serif'],
       }
     }
   },

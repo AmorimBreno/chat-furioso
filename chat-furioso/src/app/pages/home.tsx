@@ -52,20 +52,3 @@ export function Home() {
     </div>
   )
 }
-
-{
-  /* <div>
-<input
-type="text"
-value={input}
-onChange={(e) => setInput(e.target.value)}
-placeholder="Pergunte sobre a NAVI..."
-/>
-<button onClick={askAI}>Enviar</button>
-{reply && (
-<p>
-  <strong>Resposta:</strong> {reply}
-</p>
-)}
-</div> */
-}

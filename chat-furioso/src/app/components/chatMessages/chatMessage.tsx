@@ -16,7 +16,7 @@ export default function ChatMessage(message: Message) {
             case MessageTypeEnum.PREVIOUSMATCH:
               return <FuriaChatPreviousMatchMessage text={message.text} />
             case MessageTypeEnum.PLAYERS:
-              return <FuriaChatShowMembersMessage text={message.text} />
+              return <FuriaChatShowMembersMessage />
             default:
               return <FuriaChatTextMessage text={message.text} />
           }
