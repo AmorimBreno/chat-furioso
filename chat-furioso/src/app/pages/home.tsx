@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import TextBox from '../components/textBox'
 import ChatSpace from '../components/chatSpace'
 import { Message } from '../types/message'
-import { MessageTypeEnum } from '../types/MessageTypeEnum'
+import { MessageTypeEnum } from '../types/messageTypeEnum'
 import { SenderEnum } from '../types/SenderEnum'
 
 export function Home() {

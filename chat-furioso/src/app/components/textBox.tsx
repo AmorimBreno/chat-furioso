@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { FaPaperPlane } from 'react-icons/fa6'
-import { MessageTypeEnum } from '../types/MessageTypeEnum'
+import { MessageTypeEnum } from '../types/messageTypeEnum'
 import { SenderEnum } from '../types/SenderEnum'
 
 export default function TextBox(props: {

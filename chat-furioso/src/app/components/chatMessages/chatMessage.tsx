@@ -2,7 +2,7 @@ import { Message } from '@/app/types/message'
 import FuriaChatNextMatchMessage from './ChatInteractions/NextMatch'
 import FuriaChatPreviousMatchMessage from './ChatInteractions/PreviousMatch'
 import FuriaChatShowMembersMessage from './ChatInteractions/ShowMembers'
-import { MessageTypeEnum } from '@/app/types/MessageTypeEnum'
+import { MessageTypeEnum } from '@/app/types/messageTypeEnum'
 import { SenderEnum } from '@/app/types/SenderEnum'
 
 export default function ChatMessage(message: Message) {

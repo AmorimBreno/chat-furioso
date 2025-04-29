@@ -1,4 +1,4 @@
-import { MessageTypeEnum } from "./MessageTypeEnum";
+import { MessageTypeEnum } from "./messageTypeEnum";
 import { SenderEnum } from "./SenderEnum";
 
 export type Message =  {

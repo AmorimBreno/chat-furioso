@@ -1,12 +1,23 @@
 import { FuriaLogo, NaviLogo } from '../chatMessage'
 
-export default function FuriaChatNextMatchMessage({ text }: { text: string }) {
+export default function FuriaChatNextMatchMessage() {
   const nextMatch = {
-    date: '15-10-2025',
-    time: '14:00',
+    date: new Date('Dec 15, 2025 14:00:00 GMT-0300'),
     opponent: 'NAVI',
     tournament: 'BLAST Premier Fall Groups 2025'
   }
+
+  const day = nextMatch.date.getDate()
+  const monthWritten =
+    'de ' +
+    nextMatch.date.toLocaleDateString('pt-BR', {
+      month: 'long'
+    })
+
+  const fullTime =
+    nextMatch.date.getHours() +
+    ':' +
+    nextMatch.date.getMinutes().toString().padStart(2, '0')
 
   return (
     <div className="bg-red flex w-full items-start justify-start">
@@ -26,16 +37,19 @@ export default function FuriaChatNextMatchMessage({ text }: { text: string }) {
               FURIA
             </div>
           </div>
-          <div className="mt-6 flex h-32 w-64 flex-col items-center justify-center font-russo">
-            <div className="mt-6 text-6xl text-white mix-blend-difference">
+          <div className="flex h-32 w-64 flex-col items-center justify-center gap-2 font-russo">
+            <div className="mt-12 w-[90%] text-center font-michroma text-sm font-bold text-white">
+              {nextMatch.tournament}
+            </div>
+            <div className="mt-2 text-6xl text-white mix-blend-difference">
               VS
             </div>
-            <div className="mt-6 border-2 border-black p-1">
-              <div className="text-center text-lg font-bold text-black">
-                {nextMatch.date} - {nextMatch.time}
+            <div className="mb-12">
+              <div className="text-center font-russo text-2xl font-bold text-black">
+                {day} <a>{monthWritten}</a>
               </div>
-              <div className="text-sm font-bold text-black">
-                {nextMatch.tournament}
+              <div className="flex items-center justify-center font-michroma text-lg">
+                {fullTime}
               </div>
             </div>
           </div>
