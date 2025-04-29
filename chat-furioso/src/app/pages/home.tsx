@@ -9,9 +9,9 @@ import { SenderEnum } from '../types/SenderEnum'
 export function Home() {
   const [messageList, setMessageList] = useState<Message[]>([
     {
-      text: 'Ola, me pergunte o que quiser sobre a furia no CS!',
+      text: 'Olá, me pergunte o que quiser sobre o time de CS da Furia!',
       sender: SenderEnum.FURIA,
-      type: MessageTypeEnum.NEXTMATCH
+      type: MessageTypeEnum.TEXT
     }
   ])
 
