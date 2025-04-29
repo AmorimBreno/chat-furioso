@@ -12,7 +12,7 @@ export default function ChatMessage(message: Message) {
         (() => {
           switch (message.type) {
             case MessageTypeEnum.NEXTMATCH:
-              return <FuriaChatNextMatchMessage text={message.text} />
+              return <FuriaChatNextMatchMessage />
             case MessageTypeEnum.PREVIOUSMATCH:
               return <FuriaChatPreviousMatchMessage text={message.text} />
             case MessageTypeEnum.PLAYERS:
