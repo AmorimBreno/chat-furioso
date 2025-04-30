@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { FaPaperPlane } from 'react-icons/fa6'
-import { MessageTypeEnum } from '../types/messageTypeEnum'
 import { SenderEnum } from '../types/SenderEnum'
+import { MessageTypeEnum } from '../types/MessageTypeEnum'
 
 export default function TextBox(props: {
   text: string
@@ -23,6 +23,17 @@ export default function TextBox(props: {
       <div className="flex max-h-32 min-h-14 w-full items-end justify-between gap-2 border-2 border-black bg-white p-2">
         <textarea
           ref={textareaRef}
+          onKeyDown={(e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+            if (e.key === "Enter") {
+              props.sendMessage({
+            text: props.text,
+            sender: SenderEnum.USER,
+            type: MessageTypeEnum.TEXT
+            
+          })
+          e.preventDefault();
+            }
+            }}
           placeholder="Pergunte algo sobre a Furia..."
           className="text-md max-h-[96px] min-h-10 w-full resize-none overflow-hidden focus:outline-none"
           rows={1}
