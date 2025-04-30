@@ -48,9 +48,9 @@ export default function TextBox(props: {
               type: MessageTypeEnum.TEXT
             })
           }
-          className="group h-10 max-h-full w-10 rounded-sm bg-black p-2 transition-all duration-200 ease-in-out hover:border-2 hover:border-black hover:bg-white"
+          className="group h-10 max-h-full w-10 rounded-sm bg-black p-2 transition-all duration-200 ease-in-out hover:border-2 hover:border-black hover:bg-white cursor-pointer"
         >
-          <FaPaperPlane className="h-full w-full cursor-pointer text-white group-hover:text-black" />
+          <FaPaperPlane className="h-full w-full  text-white group-hover:text-black" />
         </div>
       </div>
     </div>
