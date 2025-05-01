@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import TextBox from '../components/textBox'
 import ChatSpace from '../components/chatSpace'
 import { Message } from '../types/message'
-import { MessageTypeEnum } from '../types/messageTypeEnum'
+import { MessageTypeEnum } from '../types/MessageTypeEnum'
 import { SenderEnum } from '../types/SenderEnum'
 
 export function Home() {
@@ -20,19 +20,19 @@ export function Home() {
   const [input, setInput] = useState('')
 
   const addNewMessage = async (message: Message) => {
+    if(message.text.trim().length === 0) return
+    setInput("")
     setMessageList((prevMessages) => [...prevMessages, message])
 
     const response = await axios.post('http://localhost:5000/ask-furia', {
-      question: input
+      question: message.text
     })
-
     const aiReply = response.data.response
 
     setMessageList((prevMessages) => [
       ...prevMessages,
       { text: aiReply, sender: SenderEnum.FURIA, type: MessageTypeEnum.TEXT }
     ])
-    setInput('')
   }
 
   return (
@@ -46,7 +46,7 @@ export function Home() {
         />
       </nav>
       <div className="flex h-[95%] flex-col items-center justify-end overflow-hidden rounded-md bg-white p-4 shadow-[0_0_15px_0_rgba(0,0,0,0.1)] shadow-slate-300">
-        <ChatSpace message={messageList} />
+        <ChatSpace  message={messageList}  />
         <TextBox text={input} setText={setInput} sendMessage={addNewMessage} />
       </div>
     </div>
