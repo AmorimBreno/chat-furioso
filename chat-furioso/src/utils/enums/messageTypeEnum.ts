@@ -1,6 +1,6 @@
 export enum MessageTypeEnum {
     NEXTMATCH,
-    PREVIOUSMATCH,
+    PREVMATCH,
     PLAYERS,
     TEXT,
 

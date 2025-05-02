@@ -1,8 +1,8 @@
-import OpenAI from "openai";
-import dotenv from "dotenv";
+
 import express from "express";
 import cors from "cors";
-dotenv.config();
+import { getResponse, searchWeb } from "./openai.js";
+
 
 const app = express();
 const PORT = 5000;
@@ -14,24 +14,6 @@ app.get('/', (req,res) => {
     res.send("Furia Counter Strike ChatBot API")
 });
 
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
-
-async function getResponse(input) {
-  const completion = await openai.chat.completions.create({
-    messages: [{ 
-      role: "system", 
-      content: "Você é um ChatBot assistente do time de Counter Strike da Furia."
-    }, { 
-      role: "user", 
-      content: input 
-    }],
-    model: "gpt-3.5-turbo",
-  });
-
-  console.log(completion.choices[0].message.content);
-  return completion.choices[0].message.content;
-}
-
 app.post('/ask-furia', async(req,res)=> {
     try {
         const { question } = req.body;
@@ -40,12 +22,20 @@ app.post('/ask-furia', async(req,res)=> {
             return res.status(400).json({ error: "Por favor, forneça uma pergunta" });
         }
         console.log(question);
+
         const response = await getResponse(question);
-        res.json({ response });
+
+
+        const jsonResponse = await searchWeb(response)
+        console.log("jsonResponse: "+  jsonResponse)
+        
+        res.json(jsonResponse);
+        
     } catch (error) {
         console.error(error);
         res.status(500).json({ error: "Erro ao processar sua pergunta" });
     }
+
 })
 
 app.listen(PORT, () => {
