@@ -55,6 +55,15 @@ export async function searchWeb(category)  {
     }],
 });
     const jsonResponse = treatStringToJson(completion.choices[0].message.content);
-    jsonResponse["messageType"] = messageType
-    return jsonResponse;
+
+    if (typeof jsonResponse === "object" ) {
+      jsonResponse["messageType"] = messageType
+      return jsonResponse;
+    } else {
+      jsonResponse = {
+        response: jsonResponse,
+        messsageType: "TEXT"
+      }
+      return jsonResponse
+    }
 }
