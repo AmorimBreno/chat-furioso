@@ -27,9 +27,12 @@ export function Home() {
     setInput('')
     setMessageList((prevMessages) => [...prevMessages, message])
 
-    const response = await axios.post('http://localhost:5000/ask-furia', {
-      question: message.text
-    })
+    const response = await axios.post(
+      'https://chat-furioso-api.onrender.com/ask-furia',
+      {
+        question: message.text
+      }
+    )
 
     const aiReply = response.data.response
     const messageType = getMessageType(response)
