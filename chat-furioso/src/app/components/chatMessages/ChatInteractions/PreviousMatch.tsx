@@ -1,5 +1,5 @@
 import { FaX } from 'react-icons/fa6'
-import { FuriaLogo, NaviLogo } from '../chatMessage'
+import { FuriaLogo } from '../chatMessage'
 import { PrevMatchInfo } from '@/app/types/prevMatch'
 import OpponentLogo from '../../opponents_logos'
 
