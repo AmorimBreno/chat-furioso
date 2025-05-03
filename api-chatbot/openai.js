@@ -54,7 +54,7 @@ export async function searchWeb(category)  {
         "content": searchQuery
     }],
 });
-    const jsonResponse = treatStringToJson(completion.choices[0].message.content);
+    let jsonResponse = treatStringToJson(completion.choices[0].message.content);
 
     if (typeof jsonResponse === "object" ) {
       jsonResponse["messageType"] = messageType
