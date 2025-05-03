@@ -1,5 +1,3 @@
-import { MessageTypeEnum } from "./messageTypeEnum";
-
 export function treatStringToJson(rawText) {
     console.log("rawText:   " + rawText);
 

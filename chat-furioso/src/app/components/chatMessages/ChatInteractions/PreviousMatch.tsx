@@ -1,6 +1,7 @@
 import { FaX } from 'react-icons/fa6'
 import { FuriaLogo, NaviLogo } from '../chatMessage'
 import { PrevMatchInfo } from '@/app/types/prevMatch'
+import OpponentLogo from '../../opponents_logos'
 
 export default function FuriaChatPreviousMatchMessage(
   prevMatchInfo: PrevMatchInfo
@@ -21,7 +22,10 @@ export default function FuriaChatPreviousMatchMessage(
       <FuriaLogo size={'h-12 w-12'} />
       <div className="flex w-[613px] flex-col">
         <div className="text-md h-8 w-[full] bg-black pt-1 text-center font-michroma text-white">
-          ÚLTIMA PARTIDA
+          {'ÚLTIMA PARTIDA CONTRA - '}
+          <a className="bg-white text-center text-black">
+            {prevMatchInfo.opponent.toUpperCase()}
+          </a>
         </div>
         <MatchScore
           finalScore={prevMatchInfo.finalScore}
@@ -66,7 +70,7 @@ export function MatchScore(prevMatchInfo: PrevMatchInfo) {
           </div>
         </div>
         <div className="flex-2">
-          <NaviLogo size={'h-full'} />
+          <OpponentLogo opponent={prevMatchInfo.opponent} />
         </div>
       </div>
     </>
@@ -81,7 +85,9 @@ export function MapsScores(prevMatchinfo: PrevMatchInfo) {
         <div className="flex w-full flex-row items-center justify-center gap-1 text-sm">
           <FuriaLogo size={'h-5 w-5'} />
           <div className="text-md"> {score}</div>
-          <NaviLogo size={'h-5 w-5'} />
+          <div className="h-5 w-5">
+            <OpponentLogo opponent={prevMatchinfo.opponent} />
+          </div>
         </div>
       </div>
     )
@@ -115,7 +121,7 @@ export function MatchPlayersStats(prevMatchInfo: PrevMatchInfo) {
   }) {
     return (
       <div className="flex flex-row items-center justify-between px-3">
-        <div className="text-md w-1/3 text-start">{player}</div>
+        <div className="text-md w-1/3 truncate text-start">{player}</div>
         <div className="w-1/6 text-xs">{kd}</div>
         <div className="w-1/6 text-xs">{kd_diff}</div>
         <div className="w-1/6 text-xs">{adr}</div>
