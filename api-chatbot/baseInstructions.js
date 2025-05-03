@@ -46,7 +46,18 @@ Se a mensagem do usuário se encaixar nessa categoria, você deve responder com:
 Se a mensagem não se encaixar em nenhuma das categorias, apenas responda normalmente. Se o usuario perguntar sobre outro time ou outro jogo que nao seja de CS2, apenas responda que não é do seu conhecimento, mas que está ali para ajuda-lo sobre a Furia no CS2!
 `
 
-export const baseSearchNextMatchPrompt = ``
+export const baseSearchNextMatchPrompt = `
+Considerando que hoje e dia 02/05/2025, qual a proxima partida que a equipe da furia de cs2 vai jogar?
+Procure principalmente no site draft5 e na hltv e no instagram da furia  
+Quero a sua resposta com a data e hora, o nome do oponent e o campeonato que estao participando
+Na sua resposta quero que voce me responda no formato JSON, quero que fique desta forma:
+
+{
+  "date": "Dec 15, 2025 14:00:00 GMT-0300"
+  "opponent" : "Natus Viscere"
+  "tournament" :" BLAST Premier Fall Groups 2025"
+}
+`
 
 function getDate() {
   const date = new Date();

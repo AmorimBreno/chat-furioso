@@ -1,11 +1,15 @@
 export interface NextMatchInfo {
-    response: string
+    date: string
+    opponent: string
+    tournament: string
 }
 
 export namespace NextMatch {
     export function fromJson(json: any): NextMatchInfo {
         return {
-            response: json.response,
+            date: json.date,
+            opponent: json.opponent,
+            tournament: json.tournament
         };
     }
 }

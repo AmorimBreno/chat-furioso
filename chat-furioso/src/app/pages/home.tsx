@@ -6,11 +6,10 @@ import { Message } from '../types/message'
 import { MessageTypeEnum } from '../../utils/enums/messageTypeEnum'
 import { SenderEnum } from '../../utils/enums/SenderEnum'
 import { getMessageType } from '@/utils/utils'
-import { PrevMatch, PrevMatchInfo } from '../types/prevMatch'
+import { PrevMatch } from '../types/prevMatch'
 import { NextMatch } from '../types/nextMatchInfo'
 
 export function Home() {
-  // Setting first message and initializing the Message list
   const [messageList, setMessageList] = useState<Message[]>([
     {
       text: 'Olá, me pergunte o que quiser sobre o time de CS da Furia!',
@@ -19,7 +18,6 @@ export function Home() {
     }
   ])
 
-  // Text input for the textbox to use
   const [input, setInput] = useState('')
 
   useEffect(() => {}, [messageList])
@@ -33,6 +31,7 @@ export function Home() {
       question: message.text
     })
 
+    const aiReply = response.data.response
     const messageType = getMessageType(response)
 
     if (messageType === MessageTypeEnum.PREVMATCH) {
@@ -82,8 +81,6 @@ export function Home() {
         }
       ])
     }
-
-    const aiReply = response.data.response
   }
 
   return (

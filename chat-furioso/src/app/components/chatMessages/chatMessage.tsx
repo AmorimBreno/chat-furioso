@@ -13,7 +13,13 @@ export default function ChatMessage(message: Message) {
         (() => {
           switch (message.type) {
             case MessageTypeEnum.NEXTMATCH:
-              return <FuriaChatNextMatchMessage />
+              return (
+                <FuriaChatNextMatchMessage
+                  date={message.nextMatchInfo!.date}
+                  opponent={message.nextMatchInfo!.opponent}
+                  tournament={message.nextMatchInfo!.tournament}
+                />
+              )
             case MessageTypeEnum.PREVMATCH:
               return (
                 <FuriaChatPreviousMatchMessage
@@ -72,15 +78,6 @@ export function FuriaLogo({ size }: { size: string }) {
       className={size}
       alt=""
       src="https://gg.soclminer.com.br/customers/79f6dd9a-33ad-4af8-a265-9d446e17b89c/e88a572fa1ef4ec0be7a81d3695ec840/logo.png?v=1745626288227"
-    ></img>
-  )
-}
-export function NaviLogo({ size }: { size: string }) {
-  return (
-    <img
-      className={`${size} bg-black`}
-      alt=""
-      src="//upload.wikimedia.org/wikipedia/commons/e/e0/Natus_Vincere_logo.png"
     ></img>
   )
 }
