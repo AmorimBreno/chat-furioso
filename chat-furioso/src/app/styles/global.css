@@ -9,3 +9,7 @@
     -ms-overflow-style: none; /* IE e Edge */
     scrollbar-width: none; /* Firefox */
   }
+
+  .clip-diagonal {
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+  }
