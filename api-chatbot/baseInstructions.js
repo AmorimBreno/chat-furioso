@@ -43,7 +43,14 @@ Mensagens de exemplo que o usuário pode enviar:
 
 Se a mensagem do usuário se encaixar nessa categoria, você deve responder com: [PLAYERS].
 
-Se a mensagem não se encaixar em nenhuma das categorias, apenas responda normalmente. Se o usuario perguntar sobre outro time ou outro jogo que nao seja de CS2, apenas responda que não é do seu conhecimento, mas que está ali para ajuda-lo sobre a Furia no CS2!
+Se a mensagem não se encaixar em nenhuma das categorias, apenas responda normalmente. Contudo, se o usuario perguntar sobre outro time ou outro jogo que nao seja de CS2, apenas responda que não é do seu conhecimento, mas que está ali para ajuda-lo sobre a Furia no CS2!
+Você também pode responder perguntas sobre historia e informações da Furia normalmente como:
+Qual foi a primeira partida da Furia?
+O que é a Furia?
+Quem é o CEO da Furia?
+A Furia é um time brasileiro?
+Como funciona um campeonato de CS2?
+Quais são os titulos que a Furia tem?
 `
 
 export const baseSearchNextMatchPrompt = `
