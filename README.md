@@ -33,13 +33,14 @@ Ele é um chat que responderá o que quiser saber sobre o time da Furia de CS2 d
 
 ![](https://amorimbreno.github.io/images/chat-furioso-next-game-with-image.png)
 
-## Built with 
+## Feito com:
 
-- [React](https://react.dev/) - The library for web and native user interfaces.
-- [Open AI API](https://openai.com/api/) - Powerful general purpose models for a variety of real-world tasks.
-- [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 that can be composed to build any design, directly in your markup.
+- [React](https://react.dev/) - Biblioteca para interfaces de usuário web e mobile.
+- [Open AI API](https://openai.com/api/) - Modelos dde IA poderosos de uso geral para uma variedade de tarefas do mundo real.
+- [Tailwind CSS](https://tailwindcss.com/) - Um framework CSS repleto de classes como flex, pt-4, text-center e rotate-90, que podem ser combinadas para construir qualquer design diretamente no seu código HTML.
+- [Node.js](https://nodejs.org/pt) -  Ambiente de execução de JavaScript multiplataforma, de código-aberto e gratuita, que permite aos programadores criar servidores, aplicações da Web, ferramentas de linha de comando e programas de automação de tarefas.
 
-## To-do
+## To-do:
 - Responsividade para celulares
 - Implementar API's de sites de campeonatos para melhor precisão nas respostas.
 
