@@ -37,7 +37,7 @@ Ele é um chat que responderá o que quiser saber sobre o time da Furia de CS2 d
 
 - [React](https://react.dev/) - The library for web and native user interfaces.
 - [Open AI API](https://openai.com/api/) - Powerful general purpose models for a variety of real-world tasks.
-- [TilwindCSS](https://tailwindcss.com/) - A utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 that can be composed to build any design, directly in your markup.
+- [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 that can be composed to build any design, directly in your markup.
 
 ## To-do
 - Responsividade para celulares
